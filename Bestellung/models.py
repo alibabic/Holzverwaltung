@@ -86,7 +86,7 @@ class Lagerplatz(models.Model):
         verbose_name_plural = ("Lagerplätze")
 
     def __str__(self):
-        return f"{self.bezeichnung} - {self.artikel}"
+        return f"{self.bezeichnung} - {self.artikel} ({ self.bestand} {self.artikel.liefereinheit})"
 
     def get_absolute_url(self):
         return reverse("Lagerplatz_detail", kwargs={"pk": self.pk})
