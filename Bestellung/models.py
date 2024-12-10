@@ -40,7 +40,7 @@ class Lieferung(models.Model):
 class Artikel(models.Model):
 
     mindestbestand = models.IntegerField("Mindestbestand")
-    bezeichung = models.CharField("Bezeichnung", max_length=250)
+    bezeichnung = models.CharField("Bezeichnung", max_length=250)
     liefereinheit = models.CharField("Liefereinheit", max_length=50)
     bemerkung = models.TextField("Bemerkung", null = True, blank = True )
     ekpreis = models.IntegerField("Einkaufspreis in €-Cent")
@@ -50,7 +50,7 @@ class Artikel(models.Model):
         verbose_name_plural = ("Artikel")
 
     def __str__(self):
-        return self.bezeichung
+        return self.bezeichnung
 
     def get_absolute_url(self):
         return reverse("Artikel_detail", kwargs={"pk": self.pk})
